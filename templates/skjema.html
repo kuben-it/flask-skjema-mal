@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mitt skjema</title>  <!-- ← Endre tittelen -->
+  <style>
+    body  { font-family: sans-serif; max-width: 480px; margin: 40px auto; padding: 0 16px; }
+    h1    { font-size: 1.3rem; }
+    label { display: block; margin-top: 1.2rem; font-weight: bold; }
+    input[type="text"], input[type="number"], select {
+      width: 100%; padding: 8px; margin-top: 4px;
+      border: 1px solid #ccc; border-radius: 4px;
+      font-size: 1rem;
+    }
+    .radiogruppe { margin-top: 6px; display: flex; gap: 1.5rem; }
+    button {
+      margin-top: 1.5rem; padding: 10px 24px;
+      background: #0066aa; color: white;
+      border: none; border-radius: 4px;
+      font-size: 1rem; cursor: pointer;
+    }
+    button:hover { background: #0055aa; }
+  </style>
+</head>
+<body>
+
+  <h1>Mitt skjema</h1>  <!-- ← Endre tittelen -->
+
+  <form action="/skjema" method="POST">
+
+    <!-- Spørsmål 1: fritekst -->
+    <label for="question1">Spørsmål 1</label>  <!-- ← Endre spørsmålsteksten -->
+    <input type="text" id="question1" name="question1"
+           placeholder="Skriv svaret ditt her" required>
+
+    <!-- Spørsmål 2: tall -->
+    <label for="question2">Spørsmål 2</label>  <!-- ← Endre spørsmålsteksten -->
+    <input type="number" id="question2" name="question2" min="0" value="0">
+
+    <!-- Spørsmål 3: flervalgsmeny -->
+    <label for="question3">Spørsmål 3</label>  <!-- ← Endre spørsmålsteksten -->
+    <select id="question3" name="question3">
+      <option value="answer_a">Svaralternativ A</option>  <!-- ← Endre alternativene -->
+      <option value="answer_b">Svaralternativ B</option>
+      <option value="answer_c">Svaralternativ C</option>
+    </select>
+
+    <button type="submit">Send inn</button>
+  </form>
+
+</body>
+</html>
